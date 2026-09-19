@@ -28,7 +28,7 @@ export function LedgerFilters() {
       >
         {STATUS_OPTIONS.map((s) => (
           <option key={s} value={s}>
-            {s === 'all' ? 'All statuses' : s[0].toUpperCase() + s.slice(1)}
+            {s === 'all' ? 'All statuses' : s.charAt(0).toUpperCase() + s.slice(1)}
           </option>
         ))}
       </Select>
@@ -39,7 +39,7 @@ export function LedgerFilters() {
       >
         {TYPE_OPTIONS.map((t) => (
           <option key={t} value={t}>
-            {t === 'all' ? 'All types' : t[0].toUpperCase() + t.slice(1)}
+            {t === 'all' ? 'All types' : t.charAt(0).toUpperCase() + t.slice(1)}
           </option>
         ))}
       </Select>

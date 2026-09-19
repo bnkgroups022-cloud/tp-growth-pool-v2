@@ -10,14 +10,15 @@ interface Point {
 }
 
 function CustomTooltip({ active, payload, label }: { active?: boolean; payload?: { value: number }[]; label?: string }) {
-  if (!active || !payload?.length) return null;
+  const point = payload?.[0];
+  if (!active || !point) return null;
   const date = label ? new Date(label) : null;
   return (
     <div className="rounded-lg border border-white/10 bg-base-800/95 px-3 py-2 text-xs shadow-glass">
       <p className="text-white/50">
         {date?.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })}
       </p>
-      <p className="mt-0.5 font-semibold text-white">{formatCurrency(payload[0].value)}</p>
+      <p className="mt-0.5 font-semibold text-white">{formatCurrency(point.value)}</p>
     </div>
   );
 }
